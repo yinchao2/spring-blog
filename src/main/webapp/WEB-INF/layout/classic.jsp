@@ -54,9 +54,10 @@
 			<!--/.container-fluid -->
 		</nav>
 
-
-		<tiles:insertAttribute name="body" />
-		<br> <br>
+		<div class="jumbotron">
+			<tiles:insertAttribute name="body" />
+		</div>
+		
 		<center>
 			<tiles:insertAttribute name="footer" />
 		</center>
