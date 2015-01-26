@@ -39,11 +39,11 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<c:url value="/index" />">String blog</a>
+					<a class="navbar-brand" href="<c:url value="/index.html" />">String blog</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="<c:url value="/index" />">Home</a></li>
+						<li class="active"><a href="<c:url value="/index.html" />">Home</a></li>
 						<li><a href="#">About</a></li>
 						<li><a href="#">Contact</a></li>
 					</ul>
