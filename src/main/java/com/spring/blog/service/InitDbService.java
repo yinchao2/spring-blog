@@ -60,12 +60,14 @@ public class InitDbService {
 		blogRepository.save(blogJavavids);
 		
 		Item item1 = new Item();
+		item1.setBlog(blogJavavids);
 		item1.setTitle("First item");
 		item1.setLink("http://www.javaids.com");
 		item1.setPublishedDate(new Date());
 		itemRepository.save(item1);
 		
 		Item item2 = new Item();
+		item2.setBlog(blogJavavids);
 		item2.setTitle("Second item");
 		item2.setLink("http://www.javaids.com");
 		item2.setPublishedDate(new Date());
