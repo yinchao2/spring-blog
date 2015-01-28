@@ -29,7 +29,7 @@
 	</listener>
 	
 	<!-- spring data jpa -->
-	<filter>
+	<!-- <filter>
 		<filter-name>oemInViewFilter</filter-name>
 		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
 		<init-param>
@@ -41,5 +41,5 @@
 	<filter-mapping>
 		<filter-name>oemInViewFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 </web-app>
