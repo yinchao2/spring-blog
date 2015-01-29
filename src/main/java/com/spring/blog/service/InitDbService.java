@@ -73,6 +73,34 @@ public class InitDbService {
 		item2.setPublishedDate(new Date());
 		itemRepository.save(item2);
 		
+		Item item3 = new Item();
+		item3.setBlog(blogJavavids);
+		item3.setTitle("3 item");
+		item3.setLink("http://www.javaids.com");
+		item3.setPublishedDate(new Date());
+		itemRepository.save(item3);
+		
+		Item item4 = new Item();
+		item4.setBlog(blogJavavids);
+		item4.setTitle("4 item");
+		item4.setLink("http://www.javaids.com");
+		item4.setPublishedDate(new Date());
+		itemRepository.save(item4);
+		
+		Item item5 = new Item();
+		item5.setBlog(blogJavavids);
+		item5.setTitle("5 item");
+		item5.setLink("http://www.javaids.com");
+		item5.setPublishedDate(new Date());
+		itemRepository.save(item5);
+		
+		Item item6 = new Item();
+		item6.setBlog(blogJavavids);
+		item6.setTitle("6 item");
+		item6.setLink("http://www.javaids.com");
+		item6.setPublishedDate(new Date());
+		itemRepository.save(item6);
+		
 	}
 	
 
