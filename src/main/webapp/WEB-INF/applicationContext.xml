@@ -41,4 +41,5 @@
 	
 	<jpa:repositories base-package="com.spring.blog.repository" entity-manager-factory-ref="emf" />
 
+	<import resource="/spring-security.xml"/>
 </beans>
