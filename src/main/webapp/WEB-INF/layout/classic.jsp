@@ -3,6 +3,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,10 +47,18 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li class="${current == 'index'? 'active' : ''}"><a href="<c:url value="/index.html" />">Home</a></li>
-						<li class="${current == 'users'? 'active' : ''}"><a href="<c:url value="/users.html" />">Users</a></li>
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+							<li class="${current == 'users'? 'active' : ''}"><a href="<c:url value="/users.html" />">Users</a></li>
+						</security:authorize>
 						<li class="${current == 'register'? 'active' : ''}"><a href="<c:url value="/register.html" />">Register</a></li>
-						<li class="${current == 'login'? 'active' : ''}"><a href="<c:url value="/login.html" />">Login</a></li>
-						<li><a href="<c:url value="/logout" />">Logout</a></li>
+			
+						<security:authorize access="!isAuthenticated()">
+							<li class="${current == 'login'? 'active' : ''}"><a href="<c:url value="/login.html" />">Login</a></li>
+						</security:authorize>
+						
+						<security:authorize access="isAuthenticated()">
+							<li><a href="<c:url value="/logout" />">Logout</a></li>
+						</security:authorize>
 					</ul>
 					
 				</div>
