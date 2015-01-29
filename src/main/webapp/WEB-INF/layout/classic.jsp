@@ -57,7 +57,7 @@
 						</security:authorize>
 						
 						<security:authorize access="isAuthenticated()">
-							<li><a href="<c:url value="/logout" />">Logout</a></li>
+							<li><a href="<c:url value='/logout'/>">Logout</a></li>
 						</security:authorize>
 					</ul>
 					

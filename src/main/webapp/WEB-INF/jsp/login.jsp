@@ -49,6 +49,15 @@
 
 	<form class="form-signin" action="<c:url value="/j_spring_security_check" />" method="POST">
 		<h2 class="form-signin-heading">Please sign in</h2>
+		
+		<c:if test="${param.logout != null}">
+			<h2><small class="text-success bg-success">You logout successfully!</small></h2>
+		</c:if>
+		
+		<c:if test="${param.error != null}">
+			<h2><small class="text-danger bg-danger">Invalid username and password!</small></h2>
+		</c:if>
+		
 		<label for="inputEmail" class="sr-only">Email address</label> 
 		<input type="text" name='j_username' class="form-control" placeholder="username" required autofocus> 
 		<label for="inputPassword" class="sr-only">Password</label> 
