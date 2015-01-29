@@ -57,6 +57,7 @@
 						</security:authorize>
 						
 						<security:authorize access="isAuthenticated()">
+							<li class="${current == 'users'? 'active' : ''}"><a href="<c:url value="/account.html" />">My account</a></li>
 							<li><a href="<c:url value='/logout'/>">Logout</a></li>
 						</security:authorize>
 					</ul>
