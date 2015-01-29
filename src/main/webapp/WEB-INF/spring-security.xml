@@ -10,7 +10,7 @@
 		<intercept-url pattern="/users**" access="ROLE_ADMIN" />
 		<intercept-url pattern="/users/**" access="ROLE_ADMIN" />
 		<form-login login-page="/login.html" />
-		<logout />
+		<logout logout-url="/logout" logout-success-url="/login.html" />
 	</http>
 
 	<authentication-manager>

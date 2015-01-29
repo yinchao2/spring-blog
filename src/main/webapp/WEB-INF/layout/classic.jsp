@@ -49,6 +49,7 @@
 						<li class="${current == 'users'? 'active' : ''}"><a href="<c:url value="/users.html" />">Users</a></li>
 						<li class="${current == 'register'? 'active' : ''}"><a href="<c:url value="/register.html" />">Register</a></li>
 						<li class="${current == 'login'? 'active' : ''}"><a href="<c:url value="/login.html" />">Login</a></li>
+						<li><a href="<c:url value="/logout" />">Logout</a></li>
 					</ul>
 					
 				</div>
