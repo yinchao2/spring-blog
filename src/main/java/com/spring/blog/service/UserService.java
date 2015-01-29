@@ -15,6 +15,7 @@ import com.spring.blog.repository.BlogRepository;
 import com.spring.blog.repository.ItemRepository;
 import com.spring.blog.repository.UserRepository;
 
+@Transactional
 @Service
 public class UserService {
 
@@ -45,5 +46,9 @@ public class UserService {
 		}
 		user.setBlogs(blogs);
 		return user;
+	}
+
+	public void save(User user) {
+		userRepository.save(user);
 	}
 }
