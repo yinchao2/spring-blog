@@ -4,6 +4,11 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <form:form  cssClass="form-horizontal" commandName="user">
+
+	<c:if test="${param.success != null }">
+		<div class="alert alert-success">You register successfully!</div>
+	</c:if>
+
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-10">

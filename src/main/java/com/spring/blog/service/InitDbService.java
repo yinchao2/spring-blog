@@ -47,6 +47,7 @@ public class InitDbService {
 		roleRepository.save(roleAdmin);
 		
 		User userAdmin = new User();
+		userAdmin.setEnabled(true);
 		userAdmin.setName("admin");
 		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -105,8 +106,5 @@ public class InitDbService {
 		item6.setLink("http://www.javaids.com");
 		item6.setPublishedDate(new Date());
 		itemRepository.save(item6);
-		
 	}
-	
-
 }
