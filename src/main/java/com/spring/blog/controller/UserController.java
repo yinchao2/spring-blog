@@ -67,4 +67,18 @@ public class UserController {
 		return "redirect:/account.html";
 	}
 	
+	@RequestMapping(value="/blog/remove/{id}")
+	public String removeBlog(@PathVariable int id) {
+		blogService.remove(id);
+		return "redirect:/account.html";
+	}
+	
+	@RequestMapping(value="/user/remove/{id}")
+	public String removeUser(@PathVariable int id) {
+		userService.remove(id);
+		return "redirect:/users.html";
+	}
+	
+	
+	
 }

@@ -23,5 +23,9 @@ public class BlogService {
 		blogRepository.save(blog);
 	}
 
+	public void remove(int id) {
+		blogRepository.delete(id);
+	}
+
 	
 }

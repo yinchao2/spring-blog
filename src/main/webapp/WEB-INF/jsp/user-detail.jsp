@@ -75,6 +75,7 @@
 				<b>Blog:</b>
 				<c:out value="${blog.name}" />
 			</h3>
+			<a href="<c:url value="/blog/remove/${blog.id}.html" />" class="btn btn-danger">Remove blog</a>
 			<c:out value="${blog.url}" />
 			<br />
 			<br />
