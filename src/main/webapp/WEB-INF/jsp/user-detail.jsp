@@ -31,12 +31,14 @@
 						<label for="inputEmail3" class="col-sm-2 control-label">Name</label>
 						<div class="col-sm-10">
 							<form:input type="text" path="name" cssClass="form-control" />
+							<form:errors path="name" cssClass="text-danger" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Url</label>
 						<div class="col-sm-10">
 							<form:input type="text" path="url" cssClass="form-control" />
+							<form:errors path="url" cssClass="text-danger" />
 						</div>
 					</div>
 

@@ -13,18 +13,21 @@
     <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-10">
       <form:input type="text" path="name" cssClass="form-control" />
+      <form:errors path="name" cssClass="text-danger" />
     </div>
   </div>
    <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
       <form:input type="text" path="email" cssClass="form-control" />
+      <form:errors path="email" cssClass="text-danger" />
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-10">
        <form:password path="password" cssClass="form-control" />
+       <form:errors path="password" cssClass="text-danger" />
     </div>
   </div>
   

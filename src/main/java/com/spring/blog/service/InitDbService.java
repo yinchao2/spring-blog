@@ -61,7 +61,7 @@ public class InitDbService {
 		
 		Blog blogJavavids = new Blog();
 		blogJavavids.setName("Javavids");
-		blogJavavids.setUrl("www.javavids.com");
+		blogJavavids.setUrl("http://www.oati.com/About-Us/Careers/Job-Posting");
 		blogJavavids.setUser(userAdmin);
 		blogRepository.save(blogJavavids);
 		
