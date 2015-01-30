@@ -5,10 +5,15 @@
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security.xsd">
+           
+	<global-method-security pre-post-annotations="enabled" />
 
 	<http use-expressions="true">
 		<intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/account**" access="isAuthenticated()" />
+		<intercept-url pattern="/blog/remove/**" access="isAuthenticated()" />
+		<intercept-url pattern="/user/remove/**" access="hasRole('ROLE_ADMIN')" />
 		<form-login login-page="/login.html" authentication-failure-url="/login.html?error=true" />
 		<logout logout-url="/logout" logout-success-url="/login.html?logout=true" />
 	</http>
