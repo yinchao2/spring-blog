@@ -55,6 +55,13 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.nav-tabs a:first').tab('show') // Select first tab
+		
+		$(".triggerRemove").click(function(e) {
+			e.preventDefault();
+			$("#modalRemove .removeBtn").attr("href", $(this).attr("href"));
+			$("#modalRemove").modal();
+		});
+		
 	});
 </script>
 
@@ -75,7 +82,7 @@
 				<b>Blog:</b>
 				<c:out value="${blog.name}" />
 			</h3>
-			<a href="<c:url value="/blog/remove/${blog.id}.html" />" class="btn btn-danger">Remove blog</a>
+			<a href="<c:url value="/blog/remove/${blog.id}.html" />" class="btn btn-danger triggerRemove" >Remove blog</a>
 			<c:out value="${blog.url}" />
 			<br />
 			<br />
@@ -100,6 +107,24 @@
 		</div>
 		</c:forEach>
 	</div>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="modalRemove" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Remove blog</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to remove this blog?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a href="" class="btn btn-danger removeBtn">Remove</a>
+      </div>
+    </div>
+  </div>
 </div>
 
