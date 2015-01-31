@@ -13,7 +13,7 @@
 
 
 <!-- Modal -->
-<form:form cssClass="form-horizontal" commandName="blog">
+<form:form cssClass="form-horizontal blogForm" commandName="blog">
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -64,6 +64,26 @@
 			$("#modalRemove").modal();
 		});
 		
+		$(".blogForm").validate(
+			{
+				rules: {
+					name: {
+						required: true,
+						minlength: 6
+					},
+					url: {
+						required: true,
+						url: true
+					}
+				},
+				highlight: function(element) {
+					$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+				},
+				unhighlight: function(element) {
+					$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+				}
+			}		
+		);
 	});
 </script>
 
