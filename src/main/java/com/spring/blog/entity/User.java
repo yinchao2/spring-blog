@@ -3,6 +3,7 @@ package com.spring.blog.entity;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +14,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
+import com.spring.blog.annotation.UniqueUsername;
+
 @Entity
 public class User {
 	
@@ -21,13 +24,15 @@ public class User {
 	private Integer id;
 	
 	@Size(min=3, message="Name must be at least 3 characters long!")
+	@Column(unique=true)
+	@UniqueUsername(message="This username already exists!")
 	private String name;
 	
 	@Size(min=6, message="Email must be at least 6 characters long!")
 	@Email(message="Invalid email address!")
 	private String email;
 	
-	@Size(min=5, message="Password must be at least 3 characters long!")
+	@Size(min=5, message="Password must be at least 5 characters long!")
 	private String password;
 	
 	private boolean enabled;
