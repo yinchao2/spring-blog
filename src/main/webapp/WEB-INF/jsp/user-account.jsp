@@ -7,6 +7,53 @@
 	Welcome <b><c:out value="${user.name}" /></b>!
 </h2>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+	data-target="#myModal">Create New Blog</button>
+
+
+<!-- Modal -->
+<form:form cssClass="form-horizontal" commandName="blog">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">New Blog</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+						<div class="col-sm-10">
+							<form:input type="text" path="name" cssClass="form-control" />
+							<form:errors path="name" cssClass="text-danger" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">Url</label>
+						<div class="col-sm-10">
+							<form:input type="text" path="url" cssClass="form-control" />
+							<form:errors path="url" cssClass="text-danger" />
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<input type="submit" value="Save" class="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	</div>
+</form:form>
+
+<br/></br/>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.nav-tabs a:first').tab('show') // Select first tab
