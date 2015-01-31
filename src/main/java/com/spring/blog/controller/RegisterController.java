@@ -7,8 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.blog.entity.User;
 import com.spring.blog.service.UserService;
@@ -34,6 +37,13 @@ public class RegisterController {
 		}
 		userService.save(user);
 		return "redirect:/register.html?success=true";
+	}
+	
+	@RequestMapping("/available")
+	@ResponseBody
+	public String availableUsername(@RequestParam String username) {
+		Boolean available = userService.findOne(username) == null;
+		return available.toString();
 	}
 
 }

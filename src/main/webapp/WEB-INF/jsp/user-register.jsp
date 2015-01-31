@@ -2,7 +2,11 @@
     pageEncoding="UTF-8"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
+<style>
+	.error {
+		color: red;
+	}
+</style>
 <form:form  cssClass="form-horizontal registrationForm" commandName="user">
 
 	<c:if test="${param.success != null }">
@@ -12,7 +16,7 @@
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-10">
-      <form:input type="text" path="name" cssClass="form-control" />
+      <form:input type="text" path="name" cssClass="form-control" id="username" />
       <form:errors path="name" cssClass="text-danger" />
     </div>
   </div>
@@ -50,7 +54,16 @@ $(".registrationForm").validate(
 		rules: {
 			name: {
 				required: true,
-				minlength: 3
+				minlength: 3,
+				remote: {
+			        url: "<c:url value='/register/available.html' />",
+			        type: "get",
+			        data: {
+			          username: function() {
+			            return $( "#username" ).val();
+			          }
+			        }
+			    }
 			},
 			email: {
 				required: true,
@@ -71,6 +84,11 @@ $(".registrationForm").validate(
 		},
 		unhighlight: function(element) {
 			$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+		},
+		messages: {
+			name: {
+				remote: "Such username already exists!"
+			}
 		}
 	}		
 );
